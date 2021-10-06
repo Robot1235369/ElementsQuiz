@@ -6,12 +6,27 @@ finished = []
 again = True
 
 while again:
-    num1 = randint(0, 50)
-    num2 = randint(0, 2)
 
-    if num2 == 0:
-        answer = input(elements[num1] + " = ")
-    elif num2 == 1:
-        answer = input("")
-    else:
-        print("ERROR, num2 wasn't 0 or 1")
+    for i in range(100):
+        num1 = randint(0, 50)
+        num2 = randint(0, 2)
+
+        keys = list(elements.keys())
+        values = list(elements.values())
+
+        if num2 == 0:
+            guess = input(keys[num1] + " = ")
+            answer = values[num1]
+        elif num2 == 1:
+            guess = input(values[num1] + " = ")
+            answer = keys[num1]
+        else:
+            print("ERROR, num2 wasn't 0 or 1")
+
+        if guess == "?":
+            print("answer: " + answer)
+        else:
+        if guess == answer:
+                print("correct")
+        else:
+            print("incorrect")
