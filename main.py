@@ -7,36 +7,49 @@ keys = list(elements.keys())
 values = list(elements.values())
 
 i = 1
+right = 0
+wrong = 0
 
-while i <= 100:
-    num1 = randint(0, 50)
-    num2 = randint(0, 2)
+while i <= len(keys) * 2:
 
     a = True
 
-    while a == True:
+    while a:
+        
+        num1 = randint(0, 50)
+        num2 = randint(0, 2)
 
         if num2 == 0:
-            guess = input(keys[num1] + " = ")
             answer = values[num1]
-        elif num2 == 1:
-            guess = input(values[num1] + " = ")
-            answer = keys[num1]
-        else:
-            answer = "hello"
-            print("ERROR, num2 wasn't 0 or 1")
 
-        if answer in finished:
-            a = True
-        else:
-            a = False
-            finished.append(answer)
+            if answer in finished:
+                a = True
+            else:
+                a = False
+                finished.append(answer)
+                guess = input("\n" + keys[num1] + " = ")
+        elif num2 == 1:
+            answer = keys[num1]
+
+            if answer in finished:
+                a = True
+            else:
+                a = False
+                finished.append(answer)
+                guess = input("\n" + values[num1] + " = ")
 
     if guess == "?":
         print("answer: " + answer)
+        wrong += 1
     elif guess == answer:
+            right += 1
             print("correct")
     else:
         print("incorrect")
+        wrong += 1
         print("answer: " + answer)
     i += 1
+
+print("correct: " + right)
+print("incorrect: " + wrong)
+print("total: " + right + wrong)
