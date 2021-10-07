@@ -57,4 +57,4 @@ while i < 100:
 
 print("correct: " + str(right))
 print("incorrect: " + str(wrong))
-print("total: " + str(right + wrong + 2))
+print("total: " + str(right + wrong))
