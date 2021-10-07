@@ -6,18 +6,23 @@ finished = []
 keys = list(elements.keys())
 values = list(elements.values())
 
-i = 1
+i = 0
 right = 0
 wrong = 0
 
-while i <= len(keys) * 2:
+while i < 100:
 
     a = True
 
     while a:
         
-        num1 = randint(0, 50)
+        num1 = randint(0, 49)
         num2 = randint(0, 2)
+
+        if num1 >= 50:
+            print("num1 is too high")
+        elif num1 < 0:
+            print("num1 is too low")
 
         if num2 == 0:
             answer = values[num1]
@@ -50,6 +55,6 @@ while i <= len(keys) * 2:
         print("answer: " + answer)
     i += 1
 
-print("correct: " + right)
-print("incorrect: " + wrong)
-print("total: " + right + wrong)
+print("correct: " + str(right))
+print("incorrect: " + str(wrong))
+print("total: " + str(right + wrong + 2))
