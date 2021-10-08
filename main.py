@@ -55,6 +55,6 @@ while i < 100:
         print("answer: " + answer)
     i += 1
 
-print("correct: " + str(right))
+print("\ncorrect: " + str(right))
 print("incorrect: " + str(wrong))
 print("total: " + str(right + wrong))
