@@ -55,6 +55,4 @@ while i < 100:
         print("answer: " + answer)
     i += 1
 
-print("\ncorrect: " + str(right))
-print("incorrect: " + str(wrong))
-print("total: " + str(right + wrong))
+print("\nScore: " + str(right) + "%")
